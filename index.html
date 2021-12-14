@@ -213,11 +213,7 @@ p{
 	
 
 }
-@media (max-width:650px) and (min-width:390px){
-		.emailtx{
-			font-size:10px;
-		}
-}
+
 .numerotxt{
 	font-size:20px;
 }
@@ -370,8 +366,15 @@ textarea {
 	display:flex !important;
 	justify-content: space-around !important;
 	flex-wrap: wrap !important;
+	
 
 	
+}
+@media (max-width:640px) and (min-width:390px){
+	.grid{
+		flex-direction: column;
+
+	}
 }
 .wpcf7-form {
 	width:100%;
