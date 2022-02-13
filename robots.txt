@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /sitemap.xml
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.jowebsites.com.br/sitemap.xml
