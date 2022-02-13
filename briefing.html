@@ -3329,20 +3329,31 @@
 	<p class="wpcf7-form-control-wrap your-email">
 		
 	<label for="cars">Qual a aparência da identidade visual (design) esperada?
-  <select name="cars" id="cars">
-    <option value="volvo">High-tech</option>
-    <option value="saab">Artístico</option>
-    <option value="opel">Clean</option>
-    <option value="audi">Outro</option>
+  <select name="tipo de id" id="tipo-de-id" required>
+    <option value="High-tech">High-tech</option>
+    <option value="Artístico">Artístico</option>
+    <option value="Clean">Clean</option>
+    <option value="Outro">Outro</option>
   </select>
 </label>
   </p>
 	<p class="wpcf7-form-control-wrap your-subject">
-		<label>Assunto <input id="assunto-formulario" required
-				type="text" name="your-subject" value="" size="40"
+		<label>Quais os sites que gosta como referência? <input id="referencia-formulário" required
+				type="text" name="referencia-formulário" value="" size="40"
 				class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
 				aria-required="true" aria-invalid="false"></label>
 	</p>
+	<label for="cars">Que tipo de site pretende desenvolver?
+		<select name="tipo de id" id="tipo-de-id" required>
+		  <option value="Portal">Portal Institucional com Blog e Produtos e/ou serviços</option>
+		  <option value="Vendas">Vendas on-line com e-commerce</option>
+		  <option value="Landing">Landing Page (Página Única sem atualização)</option>
+		  <option value="Divulgacao-temp">Divulgação temporária de um novo produto ou serviço</option>
+		  <option value="blog">Um blog pessoal</option>
+		  <option value="gov-proj">Um projeto de governo com concorrência</option>
+
+		</select>
+	  </label>
 	<p class="wpcf7-form-control-wrap your-message">
 		<label>Mensagem<textarea id="textarea-formulario" required
 				name="your-message" cols="40" rows="10"
