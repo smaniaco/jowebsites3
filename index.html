@@ -10,7 +10,7 @@
 	<link rel="pingback" href="https://jowebsites.com.br/xmlrpc.php">
 	<link rel="preload" href="./font/enter-sansman/EnterSansmanBold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="./font/enter-sansman/EnterSansmanBold.woff" as="font" type="font/woff2" crossorigin>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
 	<!-- This site is optimized with the Yoast SEO plugin v17.6 - https://yoast.com/wordpress/plugins/seo/ -->
@@ -31,6 +31,8 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Est. tempo de leitura">
 	<meta name="twitter:data1" content="3 minutos">
+	
+
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -3216,7 +3218,106 @@
 		#div-74e6000{
 			align-items: center;
 		}
+		.card-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-carousel .my-card {
+  height: 20rem;
+  width: 12rem;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: scale(0.6) translateY(-2rem);
+  transform: scale(0.6) translateY(-2rem);
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  background: #2e5266;
+  background: linear-gradient(to top, #2e5266, #6e8898);
+  transition: 1s;
+}
+
+.card-carousel .my-card:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  border-radius: 100%;
+  background-color: rgba(0,0,0,0.3);
+  bottom: -5rem;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.card-carousel .my-card.active {
+  z-index: 3;
+  -webkit-transform: scale(1) translateY(0) translateX(0);
+  transform: scale(1) translateY(0) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 1s;
+}
+
+.card-carousel .my-card.prev, .card-carousel .my-card.next {
+  z-index: 2;
+  -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+  transform: scale(0.8) translateY(-1rem) translateX(0);
+  opacity: 0.6;
+  pointer-events: auto;
+  transition: 1s;
+}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+	integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+		$num = $('.my-card').length;
+$even = $num / 2;
+$odd = ($num + 1) / 2;
+
+if ($num % 2 == 0) {
+  $('.my-card:nth-child(' + $even + ')').addClass('active');
+  $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+  $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+} else {
+  $('.my-card:nth-child(' + $odd + ')').addClass('active');
+  $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
+  $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
+}
+
+$('.my-card').click(function() {
+  $slide = $('.active').width();
+  console.log($('.active').position().left);
+  
+  if ($(this).hasClass('next')) {
+    $('.card-carousel').stop(false, true).animate({left: '-=' + $slide});
+  } else if ($(this).hasClass('prev')) {
+    $('.card-carousel').stop(false, true).animate({left: '+=' + $slide});
+  }
+  
+  $(this).removeClass('prev next');
+  $(this).siblings().removeClass('prev active next');
+  
+  $(this).addClass('active');
+  $(this).prev().addClass('prev');
+  $(this).next().addClass('next');
+});
+
+
+// Keyboard nav
+$('html body').keydown(function(e) {
+  if (e.keyCode == 37) { // left
+    $('.active').prev().trigger('click');
+  }
+  else if (e.keyCode == 39) { // right
+    $('.active').next().trigger('click');
+  }
+});
+	</script>
 	<script>(function () { this._N2 = this._N2 || { _r: [], _d: [], r: function () { this._r.push(arguments) }, d: function () { this._d.push(arguments) } } }).call(window); !function (a) { a.indexOf("Safari") > 0 && -1 === a.indexOf("Chrome") && document.documentElement.style.setProperty("--ss-safari-fix-225962", "1px") }(navigator.userAgent);</script>
 	<script
 		src="https://jowebsites.com.br/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/n2.min.js?ver=af21758e"
@@ -4075,6 +4176,21 @@
 							</div>
 						</div>
 					</div>
+					<div class="card-carousel">
+						
+						  <div class="my-card"></div>
+						
+						  <div class="my-card"></div>
+						
+						  <div class="my-card"></div>
+						
+						  <div class="my-card"></div>
+						
+						  <div class="my-card"></div>
+		
+						
+					</div>
+						
 				</section>
 				
 											</div>
@@ -4355,6 +4471,8 @@
 		var wpcf7_recaptcha = { "sitekey": "6Leg-jodAAAAANHa2YcE5MgbNr-nG_p8AllM3Vmg", "actions": { "homepage": "homepage", "contactform": "contactform" } };
 /* ]]> */
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/multislider.js"></script>
 	<script type="text/javascript"
 		src="https://jowebsites.com.br/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.5.2"
 		id="wpcf7-recaptcha-js"></script>
