@@ -4184,7 +4184,6 @@ $('html body').keydown(function(e) {
 					<li><img src='wp-content\uploads\slider\cache\2a6051d11066d151e25506021bea7b8e\special-shake.surge_.sh_index.html.webp' /></li>
 					<li><img src="wp-content\uploads\slider\cache\888937d16ebe8985e03bfc62d02b7e5f\smaniaco.github.io_pagina_ .webp" /></li>
 					<li><img src="wp-content\uploads\slider\cache\e9233fb9ba6cf5a563ef25634b808066\smaniaco.github.io_ong-canto-da-terra_.webp" /></li>
-					<li><img src="wp-content\uploads\slider\cache\888937d16ebe8985e03bfc62d02b7e5f\smaniaco.github.io_pagina_ .webp" /></li>
 				</ul>
 				
 											</div>
@@ -4443,9 +4442,14 @@ $('html body').keydown(function(e) {
 	<script src="./bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.bxslider').bxSlider();
-		});
+		$(function(){
+	$('.bxslider').bxSlider({
+		mode: 'fade',
+		captions: true,
+		slideWidth: 600
+	});
+	});
+			
 	</script>
 	<script type="text/javascript"
 		src="https://jowebsites.com.br/wp-content/plugins/back-to-the-top-button/front-end/yydev-back-to-top.js?ver=5.8.2"
