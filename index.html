@@ -32,9 +32,17 @@
 	<meta name="twitter:label1" content="Est. tempo de leitura">
 	<meta name="twitter:data1" content="3 minutos">
 	
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	// Links to the libraries needed
+	<link rel="stylesheet" href="/path/to/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="./bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
+
+	// Initialize the slider
+	<script>
+	$(document).ready(function(){
+		$('.slider').bxSlider();
+	});
+	</script>>
 
 	<script>
 		$(document).ready(function(){
@@ -4470,8 +4478,6 @@ $('html body').keydown(function(e) {
 		var wpcf7_recaptcha = { "sitekey": "6Leg-jodAAAAANHa2YcE5MgbNr-nG_p8AllM3Vmg", "actions": { "homepage": "homepage", "contactform": "contactform" } };
 /* ]]> */
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/multislider.js"></script>
 	<script type="text/javascript"
 		src="https://jowebsites.com.br/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.5.2"
 		id="wpcf7-recaptcha-js"></script>
